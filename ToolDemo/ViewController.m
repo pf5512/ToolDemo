@@ -50,56 +50,6 @@
 @end
 
 @implementation ViewController
-{
-    UIImageView *pic;
-    NSMutableDictionary *recordSetting;
-    NSString *recorderFilePath;
-    AVAudioRecorder *recorder;
-    NSArray *_sourceArray;
-    
-    UIWebView *_webview;
-    
-    CGPDFDocumentRef document;
-    
-    MPMoviePlayerController *_movie;
-    
-    UIButton *_playBtn;
-    UIImageView *_cover;
-
-}
-
-/*
- - (void)viewWillAppear:(BOOL)animated
- {
- [super viewWillAppear:YES];
- [self goNext];
- }
- 
- - (void)goNext
- {
- SecondViewController *secondVC = [[SecondViewController alloc] init];
- [self presentViewController:secondVC animated:YES completion:NULL];
- }
- */
-
--(void)showPopover:(id)sender forEvent:(UIEvent*)event
-{
-    UITableViewController *tableViewController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
-    tableViewController.view.frame = CGRectMake(0,0, 110, 70);
-    TSPopoverController *popoverController = [[TSPopoverController alloc] initWithContentViewController:tableViewController];
-    
-    popoverController.cornerRadius = 5;
-    popoverController.titleText = @"change order";
-    popoverController.popoverBaseColor = [UIColor colorWithRed:97/255.0f green:164/255.0f blue:255/255.0f alpha:1.0f];
-    popoverController.popoverGradient= NO;
-    //    popoverController.arrowPosition = TSPopoverArrowPositionHorizontal;
-    [popoverController showPopoverWithTouch:event];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 35.0f;
-}
 
 - (void)viewDidLoad
 {
